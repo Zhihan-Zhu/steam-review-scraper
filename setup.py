@@ -12,8 +12,7 @@ setuptools.setup(
     keywords=['steam', 'review', 'scrape', 'crawl'],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/woctezuma/download-steam-reviews',
-    download_url='https://github.com/woctezuma/download-steam-reviews/archive/0.9.5.tar.gz',
+    url='https://github.com/Zhihan-Zhu/steam-review-scraper',
     packages=setuptools.find_packages(),
     install_requires=[
         'beautifulsoup4',
