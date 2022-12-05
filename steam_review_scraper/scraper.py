@@ -207,8 +207,8 @@ def get_game_review(id, language='default'):
         user_name = [user.find('a').text for user in users]
         user_link = [user.find('a').attrs['href'] for user in users]
         title = [review.find('div', {'class': 'title'}).text for review in reviews]
-        hour = [float(review.find('div', {'class': 'hours'}).text.split(' ')[0]) if review.find('div', {'class': 'hours'}) 
-                else np.nan for review in reviews]
+        hour = [float((review.find('div', {'class': 'hours'}).text.split(' ')[0]).replace(',', '.')[:len(review.find('div', {'class': 'hours'}).text.split(' ')[0]) - 2]) if review.find('div', {'class': 'hours'})
+else np.nan for review in reviews]
         helpful = [review.find('div',{'class': 'found_helpful'}).get_text(strip=True).split(' ')[0] for review in reviews]
         helpful = [0 if num == 'No' else int(num) for num in helpful]
         comment_section = [review.find('div', {'class': 'apphub_CardTextContent'}) for review in reviews]
